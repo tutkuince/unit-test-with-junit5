@@ -17,4 +17,9 @@ The essential idea is to break down writing a scenario(or test) into tree sectio
 - The **given** part describes the state of the world before you  begin the behavior
 you're specifying in this scenario. You can think of it as the pre-conditions to the test.
 - The **when** section is that behavior that you're specifying.
-- Finally the **then** section describes the changes you expect due to the specified behavior. 
+- Finally the **then** section describes the changes you expect due to the specified behavior.
+
+- Given > Ödenmemis durumda bir siparisi oluştur
+- When  > Siparisin iptal methodunu çagir
+- Then  > Siparis iptal durumuna gelmis mi kontrol et
+- Clean > Ortak bir siparis kullaniliyorsa siparis ilk durumuna geri getirilir. 
