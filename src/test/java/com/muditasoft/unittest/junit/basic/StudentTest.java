@@ -2,10 +2,7 @@ package com.muditasoft.unittest.junit.basic;
 
 import com.muditasoft.unittest.courserecord.LecturerCourseRecord;
 import com.muditasoft.unittest.courserecord.Student;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.time.Duration;
 import java.util.stream.Stream;
@@ -157,6 +154,14 @@ public class StudentTest {
                 () -> assertEquals("Can", ahmet.getSurname()),
                 () -> assertEquals("1", ahmet.getId())
         );
+    }
+
+    @Disabled("No more valid scenario")
+    @Test
+    @DisplayName("Test that student must have only number id")
+    @Tag("createStudent")
+    void shouldCreateStudentWithNumberId() {
+        assertThrows(IllegalArgumentException.class, () -> new Student("id", "Ahmet", "Can"));
     }
 
 }
