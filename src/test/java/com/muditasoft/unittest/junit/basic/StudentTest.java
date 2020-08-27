@@ -16,6 +16,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Test every student must have an id, name and surname")
+    @Tag("createStudent")
     void should_create_student_wth_id_name_and_surname() {
         Student student = new Student("1", "Tutku", "Ince");
 
@@ -40,6 +41,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Test every student must have an id, name and surname with grouped assertions")
+    @Tag("createStudent")
     void shouldCreateStudentWithIdNameAndSurnameWithGroupedAssertions() {
 
         /**
@@ -84,6 +86,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Got an exception when add a null lecturer course record to student")
+    @Tag("addCourse")
     void throwsExceptionWhenAddToNullCourseToStudent() {
 
         final Student ahmet = new Student("1", "Ahmet", "Can");
@@ -95,6 +98,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Add course to a student less than 10ms")
+    @Tag("addCourse")
     void addCourseToStudentWithATimeConstraint() {
         /**
          * timeoutNotExceeded
@@ -123,6 +127,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Test student creation at only development machine")
+    @Tag("createStudent")
     void shouldCreateStudentWithNameAndSurnameAtDevelopmentMachine() {
 
         assumeTrue(System.getProperty("ENV") != null, "Aborting Test: System property ENV doesn't exist!");
@@ -138,6 +143,7 @@ public class StudentTest {
 
     @Test
     @DisplayName("Test student creation at different environments")
+    @Tag("createStudent")
     void shouldCreateStudentWithNameAndSurnameWithSpecificEnvironment() {
 
         final Student ahmet = new Student("1", "Ahmet", "Can");
