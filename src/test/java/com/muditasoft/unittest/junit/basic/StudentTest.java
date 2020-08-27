@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 public class StudentTest {
 
@@ -131,6 +132,26 @@ public class StudentTest {
         assumeTrue(System.getProperty("ENV").equals("dev"), "Aborting Test: Not on a developer machine!");
 
         final Student ahmet = new Student("1", "Ahmet", "Can");
+        assertAll("Student Information",
+                () -> assertEquals("Ahmet", ahmet.getName()),
+                () -> assertEquals("Can", ahmet.getSurname()),
+                () -> assertEquals("1", ahmet.getId())
+        );
+    }
+
+    @Test
+    @DisplayName("Test student creation at different environments")
+    void shouldCreateStudentWithNameAndSurnameWithSpecificEnvironment() {
+
+        final Student ahmet = new Student("1", "Ahmet", "Can");
+
+        final String env = System.getProperty("ENV");
+        assumingThat(env != null && env.equals("dev"), () -> {
+            LecturerCourseRecord lecturerCourseRecord = new LecturerCourseRecord(null, null);
+            ahmet.addCourse(lecturerCourseRecord);
+            assertEquals(1, ahmet.getStudentCourseRecords().size());
+        });
+
         assertAll("Student Information",
                 () -> assertEquals("Ahmet", ahmet.getName()),
                 () -> assertEquals("Can", ahmet.getSurname()),
