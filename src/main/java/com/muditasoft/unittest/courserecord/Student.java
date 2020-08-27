@@ -14,4 +14,24 @@ public class Student {
         this.name = name;
         this.surname = surname;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public Set<StudentCourseRecord> getStudentCourseRecords() {
+        return studentCourseRecords;
+    }
+
+    public void setStudentCourseRecords(Set<StudentCourseRecord> studentCourseRecords) {
+        this.studentCourseRecords = studentCourseRecords;
+    }
 }
