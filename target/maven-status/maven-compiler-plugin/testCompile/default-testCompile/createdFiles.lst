@@ -1,8 +1,13 @@
 com\muditasoft\unittest\junit\basic\ConditionalStudentTest.class
 com\muditasoft\unittest\junit\basic\FizzBuzzTest.class
 com\muditasoft\unittest\junit\basic\StandardTestClass.class
-com\muditasoft\unittest\junit\basic\HelloWorldTest.class
+com\muditasoft\unittest\junit\mid\StudentTestWithDefaultMethods.class
+com\muditasoft\unittest\junit\mid\JUnitParameterizedStudentTest.class
+com\muditasoft\unittest\junit\mid\CreateDomain.class
 com\muditasoft\unittest\junit\basic\StudentTest.class
+com\muditasoft\unittest\junit\basic\ConditionalStudentTest$TestOnMacWithJRE10.class
+com\muditasoft\unittest\junit\mid\StudentTestWithTestLifecycle.class
+com\muditasoft\unittest\junit\mid\TestLifecycleReporter.class
+com\muditasoft\unittest\junit\basic\HelloWorldTest.class
 com\muditasoft\unittest\junit\basic\LecturerTest.class
 com\muditasoft\unittest\junit\basic\FibonacciNumberTest.class
-com\muditasoft\unittest\junit\basic\ConditionalStudentTest$TestOnMacWithJRE10.class
