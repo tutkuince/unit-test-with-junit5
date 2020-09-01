@@ -1,6 +1,8 @@
 package com.muditasoft.unittest.junit.mid;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -45,5 +47,11 @@ class PrimeFactorsTest {
     void generate_with_repeated_test(RepetitionInfo repetitionInfo) {
         assertEquals(primeFactorsExpectations.get(repetitionInfo.getCurrentRepetition()),
                 PrimeFactors.generate(repetitionInfo.getCurrentRepetition()));
+    }
+
+    @ParameterizedTest(name = "Generate Prime Factors for {arguments}")
+    @ValueSource(ints = {1, 2, 3, 4, 5, 6, 7, 8, 9})
+    void generate_with_parameterized_test(Integer number) {
+        assertEquals(primeFactorsExpectations.get(number), PrimeFactors.generate(number));
     }
 }
