@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,5 +54,12 @@ class PrimeFactorsTest {
     @ValueSource(ints = {1, 2, 3, 4, 5, 6, 7, 8, 9})
     void generate_with_parameterized_test(Integer number) {
         assertEquals(primeFactorsExpectations.get(number), PrimeFactors.generate(number));
+    }
+
+    @TestFactory
+    Stream<DynamicTest> generate_with_dynamic_test() {
+        return Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .map(number -> DynamicTest.dynamicTest("Generate prime factors for " + number,
+                        () -> assertEquals(primeFactorsExpectations.get(number), PrimeFactors.generate(number))));
     }
 }
