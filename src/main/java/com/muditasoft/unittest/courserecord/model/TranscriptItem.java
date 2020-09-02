@@ -74,4 +74,5 @@ public class TranscriptItem {
             return this.transcriptItem;
         }
     }
+
 }

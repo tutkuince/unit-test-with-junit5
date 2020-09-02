@@ -1,9 +1,11 @@
 package com.muditasoft.unittest.courserecord.model;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Lecturer {
+
     private String id;
     private String name;
     private String surname;
@@ -44,11 +46,7 @@ public class Lecturer {
     }
 
     public Set<LecturerCourseRecord> getLecturerCourseRecords() {
-        return lecturerCourseRecords;
-    }
-
-    public void setLecturerCourseRecords(Set<LecturerCourseRecord> lecturerCourseRecords) {
-        this.lecturerCourseRecords = lecturerCourseRecords;
+        return Collections.unmodifiableSet(lecturerCourseRecords);
     }
 
     public Department getDepartment() {
@@ -60,6 +58,7 @@ public class Lecturer {
     }
 
     public void addLecturerCourseRecord(LecturerCourseRecord lecturerCourseRecord) {
+
         if (lecturerCourseRecord.getCourse() == null) {
             throw new IllegalArgumentException("Can't add a null course to lecturer");
         }
@@ -72,5 +71,13 @@ public class Lecturer {
         this.lecturerCourseRecords.add(lecturerCourseRecord);
     }
 
-
+    public LecturerCourseRecord lecturerCourseRecord(Course course, Semester semester) {
+        return lecturerCourseRecords.stream()
+                .filter(
+                        lecturerCourseRecord ->
+                                lecturerCourseRecord.getCourse().equals(course) && lecturerCourseRecord.getSemester().equals(semester)
+                )
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Can't find lecturer course record for course<%s> and semester<%s>", course, semester)));
+    }
 }
