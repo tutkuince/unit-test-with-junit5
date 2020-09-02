@@ -1,6 +1,6 @@
 package com.muditasoft.unittest.junit.mid;
 
-import com.muditasoft.unittest.courserecord.Student;
+import com.muditasoft.unittest.courserecord.model.Student;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

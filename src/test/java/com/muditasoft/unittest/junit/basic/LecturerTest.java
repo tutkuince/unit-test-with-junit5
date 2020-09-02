@@ -1,7 +1,6 @@
 package com.muditasoft.unittest.junit.basic;
 
-import com.muditasoft.unittest.courserecord.*;
-import org.junit.jupiter.api.Assertions;
+import com.muditasoft.unittest.courserecord.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

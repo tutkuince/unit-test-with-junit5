@@ -1,4 +1,4 @@
-package com.muditasoft.unittest.courserecord;
+package com.muditasoft.unittest.courserecord.model;
 
 import java.util.HashSet;
 import java.util.Set;

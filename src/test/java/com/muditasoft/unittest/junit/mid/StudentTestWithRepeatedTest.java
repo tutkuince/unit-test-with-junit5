@@ -1,9 +1,9 @@
 package com.muditasoft.unittest.junit.mid;
 
-import com.muditasoft.unittest.courserecord.Course;
-import com.muditasoft.unittest.courserecord.LecturerCourseRecord;
-import com.muditasoft.unittest.courserecord.Semester;
-import com.muditasoft.unittest.courserecord.Student;
+import com.muditasoft.unittest.courserecord.model.Course;
+import com.muditasoft.unittest.courserecord.model.LecturerCourseRecord;
+import com.muditasoft.unittest.courserecord.model.Semester;
+import com.muditasoft.unittest.courserecord.model.Student;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

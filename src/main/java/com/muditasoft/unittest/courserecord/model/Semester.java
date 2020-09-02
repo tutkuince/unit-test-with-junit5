@@ -1,8 +1,8 @@
-package com.muditasoft.unittest.courserecord;
+package com.muditasoft.unittest.courserecord.model;
 
 import java.time.LocalDate;
 
-import static com.muditasoft.unittest.courserecord.Semester.Term.FALL;
+import static com.muditasoft.unittest.courserecord.model.Semester.Term.FALL;
 
 public class Semester {
 

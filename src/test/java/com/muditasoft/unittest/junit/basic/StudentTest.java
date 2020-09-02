@@ -1,7 +1,7 @@
 package com.muditasoft.unittest.junit.basic;
 
-import com.muditasoft.unittest.courserecord.LecturerCourseRecord;
-import com.muditasoft.unittest.courserecord.Student;
+import com.muditasoft.unittest.courserecord.model.LecturerCourseRecord;
+import com.muditasoft.unittest.courserecord.model.Student;
 import org.junit.jupiter.api.*;
 
 import java.time.Duration;
